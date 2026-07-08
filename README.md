@@ -7,8 +7,9 @@ Previously, the odom frame was often omitted or disconnected in standard FAST-LI
 Before: (Incomplete TF): map -> base_link (Missing odom)
 
 After: (Correct Nav2 Standard): map -> odom -> base_link (Connected)
+<img width="1580" height="690" alt="Screenshot from 2026-07-08 16-32-51" src="https://github.com/user-attachments/assets/9d552d7d-b2e0-4da5-b582-626f8eaa36fd" />
 
-3. Why Modify Nav2 Parameters?
+2. Why Modify Nav2 Parameters?
 Since system-level configuration files (in /opt/ros/...) are read-only and reset upon updates, a local copy of the Nav2 parameters must be used.
 - Frame Alignment: Ensured global_frame is set to map and local_frame is set to odom.
 - Topic Remapping: The odometry source is redirected to /Odometry (published by our modified FAST-LIO node).
