@@ -1,4 +1,4 @@
-# 🚀 Navigation2 Configuration & Integration
+#  Navigation2 Configuration & Integration
 To achieve seamless autonomous navigation with FAST-LIO Localization, the Nav2 parameter configuration was optimized to align with the restored map -> odom -> base_link TF hierarchy.
 
 1. TF Tree Evolution
