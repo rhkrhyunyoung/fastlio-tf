@@ -5,7 +5,6 @@ To achieve seamless autonomous navigation with FAST-LIO Localization, the Nav2 p
 Previously, the odom frame was often omitted or disconnected in standard FAST-LIO implementations, which caused failures in Nav2's local planners. By implementing the inverse transform logic, the TF tree was successfully restored to the ROS 2 standard.
 
 Before: (Incomplete TF): map -> base_link (Missing odom)
-
 After: (Correct Nav2 Standard): map -> odom -> base_link (Connected)
 
 3. Why Modify Nav2 Parameters?
