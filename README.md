@@ -3,10 +3,12 @@ To achieve seamless autonomous navigation with FAST-LIO Localization, the Nav2 p
 
 1. TF Tree Evolution
 Previously, the odom frame was often omitted or disconnected in standard FAST-LIO implementations, which caused failures in Nav2's local planners. By implementing the inverse transform logic, the TF tree was successfully restored to the ROS 2 standard.
-Before (Incomplete TF): map -> base_link (Missing odom)
-After (Correct Nav2 Standard): map -> odom -> base_link (Connected)
 
-2. Why Modify Nav2 Parameters?
+Before: (Incomplete TF): map -> base_link (Missing odom)
+
+After: (Correct Nav2 Standard): map -> odom -> base_link (Connected)
+
+3. Why Modify Nav2 Parameters?
 Since system-level configuration files (in /opt/ros/...) are read-only and reset upon updates, a local copy of the Nav2 parameters must be used.
 - Frame Alignment: Ensured global_frame is set to map and local_frame is set to odom.
 - Topic Remapping: The odometry source is redirected to /Odometry (published by our modified FAST-LIO node).
